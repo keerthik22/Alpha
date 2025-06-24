@@ -1,7 +1,5 @@
 import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
 import { Customer } from '@/app/lib/definitions';
-import Search from '@/app/ui/search';
 import { formatCurrency } from '@/app/lib/utils'; // or wherever it is defined
 
 

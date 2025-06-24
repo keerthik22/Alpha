@@ -21,7 +21,7 @@ const FormSchema = z.object({
   }),
   date: z.string(),
 });
-const CreateInvoice = FormSchema.omit({ id: true, date: true });
+//const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 export type State = {
   errors?: {
@@ -54,7 +54,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
       INSERT INTO invoices (customer_id, amount, status, date)
       VALUES (${customerId}, ${amount * 100}, ${status}, ${date})
     `;
-  } catch (error) {
+  } catch {
     return { message: 'Database Error: Failed to Create Invoice.' };
   }
 
@@ -90,7 +90,7 @@ export async function updateInvoice(
       SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
       WHERE id = ${id}
     `;
-  } catch (error) {
+  } catch {
     return { message: 'Database Error: Failed to Update Invoice.' };
   }
  
