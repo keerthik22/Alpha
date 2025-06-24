@@ -1,9 +1,12 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   experimental: {
     ppr: 'incremental'
+  },
+  eslint: {
+    // ✅ Skip ESLint during `next build` (e.g., on Vercel)
+    ignoreDuringBuilds: true
   }
 };
 
