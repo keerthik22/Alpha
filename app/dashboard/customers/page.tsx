@@ -14,8 +14,7 @@ export default async function CustomersPage({
     page?: string;
   };
 }) {
-  const resolvedSearchParams = await Promise.resolve(searchParams);
-  const query = resolvedSearchParams.query || '';
+  const query = searchParams.query || '';
   
   const rawCustomers = await fetchFilteredCustomers(query); 
   const customers = rawCustomers.map((customer) => ({
